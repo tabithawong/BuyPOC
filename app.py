@@ -1,8 +1,10 @@
 from flask import Flask, render_template, flash
-
 from forms import SubmitBusinessForm
+import database as db
 
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = "tejaspoopypants9000"
 
 
 @app.route('/')
@@ -18,8 +20,14 @@ def about_us():
 @app.route('/newbusiness', methods=["GET", "POST"])
 def submit_business():
     form = SubmitBusinessForm()
+    data = {}
     if form.validate_on_submit():
+        for field in form.data.items():
+            item = field[1]
+            data[field[0]] = item
+        db.add_store(data["name"], data["website"], data["category"], data["address"])
         flash("New Business Submitted!")
+        return render_template("index.html", form=form)
     return render_template("submitbusiness.html", title="Submit a New Business", form=form)
 
 
