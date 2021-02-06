@@ -494,10 +494,10 @@ aside.aside-left {
   color: #fff !important;
 }
 .text-primary-hover:hover, .primary-color-primary .text-primary-hover:hover {
-  color: #E4A600 !important;
+  color: #DAD0C4 !important;
 }
 .text-dark-hover:hover, .primary-color-dark .text-primary-hover:hover {
-  color: #002633 !important;
+  color: #DAD0C4 !important;
 } 
 
 /* Background Colors */
