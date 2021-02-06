@@ -1,7 +1,12 @@
 /* Default Template Styles */
 
 /* Typography */
-button:hover {
+.button {
+    justify-content: center;
+    color: #333;
+}
+
+.button:hover {
     color: #777;
 }
 
