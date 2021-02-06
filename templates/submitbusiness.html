@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+{% endblock %}
+
+{% block content %}
+    <h2> Submit a New Business </h2>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {% for field in form.data.items() %}
+            <p>
+                {{ form[field[0]].label }}
+                {{ form[field[0]]() }}
+                {% for error in form[field[0]].errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+        {% endfor %}
+    </form>
+{% endblock %}
