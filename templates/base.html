@@ -10,27 +10,35 @@
         <title>Welcome to UOttaHack!</title>
     {% endif %}
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsee.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='template-style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900&subset=latin-ext">
     <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
-
 </head>
+
 <body>
-{% block nav %}{% endblock %}
-<hr>
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
+    <div id="page-wrapper">
+        {% block nav %}{% endblock %}
+        <hr>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
 
-{% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-<div class="footer">
-  <p>© 2021 ALL RIGHTS RESERVED - CREATED BY MABEL, TABITHA, AND TEJAS</p>
-</div>
-
+        <div class="footer">
+          <p>© 2021 ALL RIGHTS RESERVED - CREATED BY MABEL, TABITHA, AND TEJAS</p>
+        </div>
+    </div>
 </body>
 </html>
