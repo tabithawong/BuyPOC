@@ -5,18 +5,6 @@
 
 {% block content %}
     <h2> Submit a New Business </h2>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        {% for field in form.data.items() %}
-            <p>
-                {{ form[field[0]].label }}
-                {{ form[field[0]]() }}
-                {% for error in form[field[0]].errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-        {% endfor %}
-    </form>
     <body class="size-1140">
         <!-- PREMIUM FEATURES BUTTON -->
         <a target="_blank" class="hide-s" href="../template/minimalista-premium-responsive-business-template/" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
@@ -38,8 +26,8 @@
                   <p class="nav-text"></p>
                   <ul class="right chevron">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="submitbusiness.html">Submit a New Business</a></li>
                   </ul>
                 </div>
               </div>
@@ -52,11 +40,22 @@
             <article>
               <header class="section background-white">
                 <div class="line text-center">
-                  <h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">Contact Us</h1>
-                  <p class="margin-bottom-0 text-size-16 text-dark">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.<br>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                  <h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">Submit a New Business</h1>
+                  <p class="margin-bottom-0 text-size-16 text-dark">Fill in the form below to submit a new business to be featured on our website and map.</p>
                 </div>
               </header>
+              <form action="" method="post" novalidate>
+                  {{ form.hidden_tag() }}
+                  {% for field in form.data.items() %}
+                      <p>
+                          {{ form[field[0]].label }}
+                          {{ form[field[0]]() }}
+                          {% for error in form[field[0]].errors %}
+                              <span style="color: red;">[{{ error }}]</span>
+                          {% endfor %}
+                      </p>
+                  {% endfor %}
+              </form>
               <section class="full-width background-dark">
                 <div class="s-12 m-12 l-6">
                   <!-- Change the background image -->
