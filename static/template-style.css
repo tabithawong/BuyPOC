@@ -71,6 +71,7 @@ h6.headline, .h6.headline {
 .text-size-12, .text-l-size-12 {
   font-size: 12px !important;
   line-height: 1.4;
+  color: white;
 }
 .text-size-16, .text-l-size-16 {
   font-size: 16px !important;
@@ -2227,6 +2228,10 @@ nav.background-transparent-hightlight.fixed .top-nav .active-item > a, nav.backg
   color: #000;
 }
 
+article {
+  position: relative;
+  margin-bottom: 4rem;
+}
 /* Aside Navigation */
 .aside-nav > ul > li > a:hover, .aside-nav > ul > li.active-item > a:link, .aside-nav > ul > li.active-item > a:visited {
   border-width: 0;
@@ -2475,6 +2480,11 @@ border: 0;
     top: -6px;
 }
 
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
 /* Forms */
 form.customform input, form.customform textarea, form.customform select {
     background: none;
@@ -2630,3 +2640,19 @@ aside {
   justify-content: space-around;
 }
 
+form {
+  colour: black;
+  margin-left: 3rem;
+  justify-content: center;
+  line-height: 3rem;
+}
+
+.form {
+  padding-left: 2rem;
+}
+
+.formp {
+  line-height: 2 !important;
+  color: black !important;
+  font-size: 1.2rem;
+}

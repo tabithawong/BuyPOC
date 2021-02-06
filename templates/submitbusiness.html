@@ -10,10 +10,11 @@
                   <p class="margin-bottom-0 text-size-16 text-dark">Fill in the form below to submit a new business to be featured on our website and map.</p>
                 </div>
               </header>
+            <div class="form">
               <form action="" method="post" novalidate>
                   {{ form.hidden_tag() }}
                   {% for field in form.data.items() %}
-                      <p>
+                      <p class="formp">
                           {{ form[field[0]].label }}
                           {{ form[field[0]]() }}
                           {% for error in form[field[0]].errors %}
@@ -22,6 +23,7 @@
                       </p>
                   {% endfor %}
               </form>
+            </div>
             </article>
           </main>
 {% endblock %}
