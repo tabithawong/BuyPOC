@@ -54,8 +54,9 @@ img {
 }
 .full-img {
   max-width: none;
-  width: 20%;
+  width: 80%;
 }
+
 .owl-nav div {font-family: "mfg";}  
 table {
   background:none repeat scroll 0 0 #fff;
