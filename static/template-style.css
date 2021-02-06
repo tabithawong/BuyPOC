@@ -1,6 +1,10 @@
 /* Default Template Styles */
 
 /* Typography */
+button:hover {
+    color: #777;
+}
+
 body {
   background: #fff;
 }
