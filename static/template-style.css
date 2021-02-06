@@ -608,8 +608,10 @@ button {
   border-width: 1px;
   color: black;
   font-family: "Work Sans";
-  display: inline-block;
+  display: inline-flex;
   padding: 0.625rem 1.25rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
   transition: all 0.20s linear 0s !important;
   -o-transition: all 0.20s linear 0s !important;
@@ -2176,7 +2178,7 @@ nav.fixed .logo-after, .fixed nav .logo-after {
 
 .logo img {
   margin: 0;
-  max-width: 194px;
+  max-width: 175px;
   position: relative;
   top: 15px;
   width: 100%;
@@ -2628,11 +2630,3 @@ aside {
   justify-content: space-around;
 }
 
-button .backtotop {
-  background: rgb(140, 130, 100);
-}
-
-/*i.fab.fa-github, i.fab.fa-dev, i.fab.fa-linkedin, i.fab.fa-user {*/
-/*  width: 200%;*/
-/*  height: auto;*/
-/*}*/
