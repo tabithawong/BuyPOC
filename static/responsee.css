@@ -52,9 +52,9 @@ img {
   max-width:100%;
   width:auto;
 }
-.owl-item img, .full-img {
+.full-img {
   max-width: none;
-  width:100%;
+  width: 20%;
 }
 .owl-nav div {font-family: "mfg";}  
 table {

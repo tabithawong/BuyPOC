@@ -2464,8 +2464,8 @@ video {
   width: 100%;
 }
 .border-image {
-    border-left: 10px solid #fff;
-    border-bottom: 10px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 }
 
 
@@ -2587,4 +2587,10 @@ aside {
   .padding-2x {
     padding: 1.25rem !important;
   }
-}    
+}
+
+.ourteam {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
