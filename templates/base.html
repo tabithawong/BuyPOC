@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    {% if title %}
+        <title>{{ title }} - TAKLA</title>
+    {% else %}
+        <title>Welcome to Takla</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+
+</head>
+<body>
+{% block nav %}{% endblock %}
+<hr>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<div class="footer">
+  <p>© 2021 ALL RIGHTS RESERVED - CREATED BY TAKLAS</p>
+</div>
+
+</body>
+</html>
