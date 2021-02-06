@@ -26,7 +26,7 @@ def submit_business():
             item = field[1]
             data[field[0]] = item
         db.add_store(data["name"], data["website"], data["category"], data["address"])
-        flash("New Business Submitted!")
+        flash("Your submission is under review, thank you!")
         return render_template("index.html", form=form)
     return render_template("submitbusiness.html", title="Submit a New Business", form=form)
 
