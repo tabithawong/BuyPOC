@@ -2648,7 +2648,7 @@ form {
 }
 
 .form {
-  padding-left: 2rem;
+  padding-left: 1rem;
   max-height: 600px;
 }
 
@@ -2660,11 +2660,11 @@ form {
 
 ul {
   display: inline-flex !important;
-  width: 90%;
+  width: 100%;
   justify-content: space-around;
   list-style-type: none !important;
   padding-top: 2rem;
-  padding-left: 2rem;
+  padding-left: 0;
 }
 
 .hor-list ul {
@@ -2675,9 +2675,8 @@ li {
   color: black;
   text-decoration: none;
   justify-self: center;
-  max-width: 200px;
+  max-width: 400px;
   max-height: 25px;
-  padding: 1rem;
   font-size: 1rem;
 }
 
