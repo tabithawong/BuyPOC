@@ -73,6 +73,9 @@
                   {{ form.hidden_tag() }}
                     <ul class=”hor-list”>
                         <li class=”list-element”>
+                            Filter for:
+                        </li>
+                        <li class=”list-element”>
                             Restaurants
                             {{ form.restaurants() }}
                         </li>
@@ -92,7 +95,7 @@
                             Lifestyle
                             {{ form.lifestyle() }}
                         </li>
-                        <li class="list-element">
+                        <li class="list-element" class="button">
                             {{ form.submit() }}
                         </li>
                     </ul>

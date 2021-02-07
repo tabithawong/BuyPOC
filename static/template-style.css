@@ -2660,9 +2660,15 @@ form {
 
 ul {
   display: inline-flex !important;
-  width: 100%;
+  width: 90%;
   justify-content: space-around;
   list-style-type: none !important;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.hor-list ul {
+  font-size: 1.2rem;
 }
 
 li {
@@ -2672,4 +2678,5 @@ li {
   max-width: 200px;
   max-height: 25px;
   padding: 1rem;
+  font-size: 1rem;
 }
