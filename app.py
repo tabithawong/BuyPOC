@@ -1,15 +1,42 @@
-from flask import Flask, render_template, flash
+from flask import Flask, render_template, flash, jsonify, request
 from forms import SubmitBusinessForm
 import database as db
+import time
 
 app = Flask(__name__)
-
 app.config["SECRET_KEY"] = "tejaspoopypants9000"
 
+icon_images = {
+    "Restaurant": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+    "Specialty Goods": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+    "Cafe": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+    "Apparel": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+    "Lifestyle": "http://maps.google.com/mapfiles/ms/icons/pink-dot.png"
+}
 
-@app.route('/')
+
+@app.route('/', methods=["POST", "GET"])
 def hello_world():
     return render_template('index.html', title="Home")
+
+
+@app.route('/getdata', methods=['GET', 'POST'])
+def getdata():
+    markers = []
+    for c, ls in enumerate(db.get_whole()):
+        time.sleep(0.5)
+        coords = str(ls[4])
+        lat = float(coords[0:coords.find(',')])
+        lng = float(coords[coords.find(',')+2:len(coords)])
+        data = {
+            "icon": icon_images[ls[2]],
+            "lat": lat,
+            "lng": lng,
+            "infobox": "<h2>" + str(ls[0]) + "</h2>" + "<a href='" + str(ls[1]) +
+                       "' target='_blank'>Website</a><p>" + str(ls[3]) + "</p>"
+        }
+        markers.append(data)
+    return jsonify({"markers": markers})
 
 
 @app.route('/about', methods=["GET"])
