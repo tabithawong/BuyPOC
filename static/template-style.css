@@ -2656,3 +2656,13 @@ form {
   color: black !important;
   font-size: 1.2rem;
 }
+
+ul .hor-list {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+li .list-element {
+  color: black;
+
+}
