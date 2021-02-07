@@ -33,7 +33,7 @@ def getdata():
             "lat": lat,
             "lng": lng,
             "infobox": "<h2>" + str(ls[0]) + "</h2>" + "<a href='" + str(ls[1]) +
-                       "' target='_blank'>Website</a><p>" + str(ls[3]) + "</p>"
+                       "' target='_blank'>Visit Their Website</a><p>" + str(ls[3]) + "</p>"
         }
         markers.append(data)
     return jsonify({"markers": markers})
