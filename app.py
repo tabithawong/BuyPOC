@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, jsonify, request
-from forms import SubmitBusinessForm
+from forms import SubmitBusinessForm, FilterForm
 import database as db
 import time
 
@@ -17,7 +17,20 @@ icon_images = {
 
 @app.route('/', methods=["POST", "GET"])
 def hello_world():
-    return render_template('index.html', title="Home")
+    form = FilterForm()
+    data = {}
+    if form.validate_on_submit():
+        for field in form.data.items():
+            item = field[1]
+            data[field[0]] = item
+        return render_template('index.html', title="Home", form=form,
+                               restaurants=data["restaurants"],
+                               cafes=data["cafes"],
+                               apparel=data["apparel"],
+                               lifestyle=data["lifestyle"],
+                               specialty_goods=data["specialty_goods"]
+                               )
+    return render_template('index.html', title="Home", form=form, restaurants=True, cafes=True, apparel=True, lifestyle=True, specialty_goods=True)
 
 
 @app.route('/getdata', methods=['GET', 'POST'])
@@ -29,7 +42,7 @@ def getdata():
         lat = float(coords[0:coords.find(',')])
         lng = float(coords[coords.find(',')+2:len(coords)])
         data = {
-            "icon": icon_images[ls[2]],
+            "category": str(ls[2]),
             "lat": lat,
             "lng": lng,
             "infobox": "<h2>" + str(ls[0]) + "</h2>" + "<a href='" + str(ls[1]) +

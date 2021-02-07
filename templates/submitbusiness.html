@@ -25,5 +25,15 @@
               </form>
             </div>
             </article>
+            <script>
+                var labels = document.getElementsByTagName("label");
+                var elements = [labels[4], labels[5]]; // grabs the unnecessary Submit and CSRF Token Labels
+                var arrayLength = elements.length;
+                for (var i = 0; i < arrayLength; i++) {
+                    var element = elements[i];
+                    var parent = element.parentNode;
+                    parent.removeChild(element);
+                }
+            </script>
           </main>
 {% endblock %}
