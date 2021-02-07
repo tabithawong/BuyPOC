@@ -75,23 +75,23 @@
                         <li class=”list-element”>
                             Filter for:
                         </li>
-                        <li class=”list-element”>
+                        <li class=”list-element” style="color: red">
                             Restaurants
                             {{ form.restaurants() }}
                         </li>
-                        <li class=”list-element”>
+                        <li class=”list-element” style="color: limegreen">
                             Cafes
                             {{ form.cafes() }}
                         </li>
-                        <li class=”list-element”>
+                        <li class=”list-element” style="color: blue">
                             Specialty Goods
                             {{ form.specialty_goods() }}
                         </li>
-                        <li class=”list-element”>
+                        <li class=”list-element” style="color: orange">
                             Apparel
                             {{ form.apparel() }}
                         </li>
-                        <li class=”list-element”>
+                        <li class=”list-element” style="color: hotpink">
                             Lifestyle
                             {{ form.lifestyle() }}
                         </li>
@@ -101,11 +101,10 @@
                     </ul>
               </form>
             </div>
-        <hr>
         <div class="line text-center">
+        <br>
         <p class="margin-bottom-0 text-size-16 text-dark"> P.S. The map takes a little while to load, thanks for your patience :)  </p>
         </div>
-        <hr>
         <div id="mapid" style="height: 500px"></div>
             <script>
                 var markers = [];
@@ -141,7 +140,16 @@
                                 fdo = true
                             }
                             if(fdo) {
-                                var mark = L.marker([item["lat"], item["lng"]]).addTo(mymap);
+                                var myIcon = L.icon({
+                                    iconUrl: item["icon"],
+                                    shadowUrl: item["icon"],
+                                    iconSize: [32, 32], // size of the icon
+                                    shadowSize: [0, 0], // size of the shadow
+                                    iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+                                    shadowAnchor: [4, 62],  // the same for the shadow
+                                    popupAnchor: [0, -25] // point from which the popup should open relative to the iconAnchor
+                                })
+                                var mark = L.marker([item["lat"], item["lng"]], {icon: myIcon}).addTo(mymap);
                                 mark.bindPopup(item["infobox"]);
                             }
                         }

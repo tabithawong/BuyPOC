@@ -37,7 +37,6 @@ def hello_world():
 def getdata():
     markers = []
     for c, ls in enumerate(db.get_whole()):
-        time.sleep(0.5)
         coords = str(ls[4])
         lat = float(coords[0:coords.find(',')])
         lng = float(coords[coords.find(',')+2:len(coords)])
@@ -46,7 +45,9 @@ def getdata():
             "lat": lat,
             "lng": lng,
             "infobox": "<h2>" + str(ls[0]) + "</h2>" + "<a href='" + str(ls[1]) +
-                       "' target='_blank'>Visit Their Website</a><p>" + str(ls[3]) + "</p>"
+                       "' target='_blank'>Visit Their Website</a><p>" + str(ls[3]) + "</p>" +
+                        "<p>" + str(ls[5]) + "</p>",
+            "icon": icon_images[str(ls[2])]
         }
         markers.append(data)
     return jsonify({"markers": markers})
