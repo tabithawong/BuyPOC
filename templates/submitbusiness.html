@@ -6,14 +6,15 @@
             <article>
               <header class="section background-white">
                 <div class="line text-center">
-                    <h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">Submit a New Business</h1>
+                    <strong><h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">Submit a New Business</h1></strong>
                   <p class="margin-bottom-0 text-size-16 text-dark">Fill in the form below to submit a new business to be featured on our website and map.</p>
                 </div>
               </header>
+            <div class="form">
               <form action="" method="post" novalidate>
                   {{ form.hidden_tag() }}
                   {% for field in form.data.items() %}
-                      <p>
+                      <p class="formp">
                           {{ form[field[0]].label }}
                           {{ form[field[0]]() }}
                           {% for error in form[field[0]].errors %}
@@ -22,6 +23,7 @@
                       </p>
                   {% endfor %}
               </form>
+            </div>
             </article>
           </main>
 {% endblock %}
