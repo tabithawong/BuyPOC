@@ -28,5 +28,5 @@ def get_store(id_):
   return sheet.get_all_values()[id_]
 
 
-def add_store(name, site, category, address):
-  sheet.append_row([name, site, category, address])
+def add_store(name, site, category, address, country):
+  sheet.append_row([name, site, category, address, None, country])

@@ -8,6 +8,7 @@ class SubmitBusinessForm(FlaskForm):
     website = StringField("Website", validators=[DataRequired()])
     category = SelectField("Category", choices=[("Restaurants", "Restaurants"), ("Cafes", "Cafes"), ("Specialty Goods", "Specialty Goods"), ("Apparel", "Apparel"), ("Lifestyle", "Lifestyle")])
     address = StringField("Address", validators=[DataRequired()])
+    country = StringField("Country", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
 
